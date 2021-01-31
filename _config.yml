@@ -1,4 +1,4 @@
-baseurl: /ProgWeb-HTMLCSS
+baseurl: /ProgWeb-NSI
 permalink: /:categories/:title
 
 markdown: kramdown
