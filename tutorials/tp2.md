@@ -1,8 +1,10 @@
 ---
-title: TD1 Partie 2 &ndash; Les bases du CSS
+title: TP2 &ndash; Introduction à CSS
 subtitle: Un langage de mise en page
 layout: tutorial
 ---
+
+Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp1.html) (éventuellement mis à jour avec la correction)
 
 Les standards définissant le CSS sont publiés par le World Wide Web Consortium
 (<a href="http://www.w3.org/">W3C</a>) à l'adresse
@@ -54,8 +56,8 @@ Une règle CSS est composée de deux parties:
 
 Mettons en place nos règles CSS :
 
-1. Nous allons travailler principalement sur ce TD sur un fichier `styles.css`.
-Créer un fichier texte vide `styles.css` dans un nouveau répertoire `css/`.
+1. Nous allons travailler principalement sur ce TP sur un fichier `styles.css`.
+Créer un fichier texte vide `styles.css` dans un nouveau répertoire `css/` de votre dossier `TP_Web_Site`.
 Nous déclarerons dans ce fichier des règles CSS.
 
 1. Copiez dans `styles.css` le style ci-dessus `h3 { ... }`.  
@@ -86,7 +88,7 @@ Pour la partie HTML, les outils de développement étaient déjà vos amis ; pou
 CSS, ils sont promus au grade de "best-friend-forever".  Sélectionner un élément
 HTML avec les outils de développement ne permet pas seulement de voir les règles
 CSS appliquées à ce dernier, il permet aussi de les **changer**. Autant dire
-qu'il est conseillé d'abuser de cet outil pendant le TD pour bidouiller tout et
+qu'il est conseillé d'abuser de cet outil pendant le TP pour bidouiller tout et
 n'importe quoi.
 
 <div class="exercise">
@@ -351,7 +353,7 @@ développement Web que nous verrons l'année prochaine.  Bref vous en aurez au
 partiel, c'est sûr.
 
 Comme vous le savez depuis le
-[TD1 HTML]({{site.baseurl}}/tutorials/tutorial1_1) une balise peut prendre des
+[TP1 HTML](tp1.html) une balise peut prendre des
 attributs. Deux attributs sont très importants pour les règles CSS :
 l'identifiant `id` et la classe `class` d'une balise.
 

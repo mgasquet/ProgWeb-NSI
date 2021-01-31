@@ -1,6 +1,6 @@
 ---
-title: TD4
-subtitle: Les formulaires.
+title: TP3 &ndash; Les formulaires
+subtitle:
 layout: tutorial
 ---
 
@@ -21,6 +21,8 @@ https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et
 -->
 
 <!-- Corriger absence d'explications sur <option value=""> et selected -->
+
+Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp2.html) (éventuellement mis à jour avec la correction)
 
 ## Introduction
 
@@ -82,9 +84,9 @@ dessus.
 
 Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soumet un formulaire.
 
- 1. Créez une nouvelle page `inscription.html` au site de Chuck Norris. Cette page
+ 1. Créez une nouvelle page `inscription.html` au site de Chuck Norris (donc, dans le dossier `TP_Web_Site`). Cette page
  va contenir le formulaire d'inscription au fan-club de Chuck que nous allons
- construire dans ce TD.
+ construire dans ce TP.
 
 1. Ajoutez à la page `inscription.html` le formulaire suivant :
 
@@ -98,7 +100,7 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
   1. **Sous Chrome relativement récent uniquement** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
   'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
   "Envoyer" du formulaire.  Vous devez voir une requête contenant
-  `sendToMySecondYearInIut` dans la console. Cliquez sur cette ligne et cherchez
+  `sendToTpServer` dans la console. Cliquez sur cette ligne et cherchez
   la valeur `dupont` dans les détails de la transaction.
   
  1. Donnez à l'attribut `method` du formulaire la valeur `get`. Cliquez sur le
@@ -108,10 +110,9 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
 
 </div>
 
-**Note** : il est normal que l'URL `sendToMySecondYearInIut.php`
+**Note** : il est normal que l'URL `sendToTpServer.php`
 n'existe pas (le fameux code de retour HTTP **404** apparaît dans
-la console), puisque vous êtes en première année. Nous verrons en deuxième année
-dans le cours "Programmation Web - Côté Serveur" comment le serveur peut
+la console), puisque nous n'avons pas encore fait le TP sur la partie serveur. Nous verrons, dans un futur TP, comment le serveur peut
 récupérer les données envoyées par notre formulaire et les traiter.
 
 
@@ -132,11 +133,9 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
  1. Rajoutez au formulaire une entrée qui correspondra au prénom (calqué sur l'exemple précédent).
  1. Validez ce dernier et vérifiez que vos deux champs sont bien présents dans
     l'URL du navigateur (l'URL doit finir par
-    `sendToMySecondYearInIut.php?uname=dupont&firstname=super` et la `method` du
+    `sendToTpServer.php?uname=dupont&firstname=super` et la `method` du
     formulaire doit toujours être `get`).
- 1. Les deux champs apparaissent les uns à la suite des autres. Avec quelle
-    balise vue dans le TD précédent peut-on les englober pour qu'il y ait un saut
-    de ligne entre les deux ?
+ 1. Pour ne pas "coller" les champs du formulaire à la suite, vous devez englober chaque champ (`<input>`) du formulaire entre des balises `<p>...</p>` 
 
 </div>
 
@@ -187,7 +186,7 @@ les navigateurs. Le type `number` l'est
 
  * A propos du mot de passe, remarquez que ce dernier
 apparaît en clair dans l'URL si vous êtes en `get` lors de l'envoi via à
-`sendToMySecondYearInIut.php`.  Définitivement donc, un envoi avec `post` doit
+`sendToTpServer.php`.  Définitivement donc, un envoi avec `post` doit
 être privilégié, même si cela n'augmente pas vraiment la sécurité puisque le mot
 de passe transite toujours en clair sur le réseau (utilisez l'onglet Réseau
 comme dans l'exercice 1 pour le voir).
@@ -284,7 +283,8 @@ temps à l'utilisateur.
 **Note :** Il existe depuis peu un pseudo attribut css `::placeholder`, mais celui-ci est [moins](http://caniuse.com/#search=placeholder%20css) bien supporté que 
 l'[attribut](http://caniuse.com/#search=placeholder%20attribute).
 
-
+<!---
+Intéressant, mais pas adapté à NSI
 ### Contrôle du contenu
 
 La sécurité de votre serveur et de vos utilisateurs impose que vous contrôliez
@@ -322,9 +322,29 @@ de vérifier le contenu du formulaire :
  1. Ajoutez au champ password un pattern pour que ne soient acceptés que des caractères de l'alphabet latin ou numériques.
  1. Faites en sorte que le mot de passe acceptable soit d'une longueur de 8 caractères minimum.
  <!-- 1. (optionnel) Ajoutez un pattern au champ mot de passe afin que celui-ci contienne obligatoirement 8 ou plus caractères avec au moins un chiffre, une lettre majuscule et une lettre minuscule.
--->
 
 </div>
 
+<!--
 **Note :** Pour être toujours protégé contre les bugs lorsque vous cogitez sur une expression régulière, ne sortez jamais sans votre [Regulex](https://jex.im/regulex). Regulex, le visualisateur de machine d'état qu'il vous faut pour vos expressions régulières.
+-->
 
+## Menu de navigation
+
+Nous allons maintenant ajouter un **menu de navigation** sur la page `inscription.html` et `index.html` pour nous permettre de naviguer entre ces deux pages.
+
+<div class="exercise">
+
+**Rappel** : [Structuration d'une page HTML](tp1.html#structure)
+
+Pour **les deux pages**, répétez les instructions suivantes :
+
+1. Ajoutez de nouvelles balises `<header></header>` à l'intérieur des balises `<body></body>`, au tout début.
+2. Placez tout ce qui reste dans la balise `<body></body>` (après le header), dans des balises `<main></main>`.
+3. Ajoutez des balises `<nav></nav>` à l'intérieur des balises `<header></header>`.
+4. A lintérieur du bloc `<nav>...</nav>` ajotuez deux liens hypertextes à l'aide des balises `<a>...</a>` :
+	* Un lien `Home` dont l'attribut `href` pointe vers `index.html`.
+	* Un lien `Inscription` dont l'attribut `href` pointe vers `inscription.html`.
+	
+Vous devriez obtenir un menu de navigation permettant de passer d'une page à l'autre!
+</div>

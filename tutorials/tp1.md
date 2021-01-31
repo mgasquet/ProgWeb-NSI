@@ -1,10 +1,10 @@
 ---
-title: TP1 &ndash; HTML - un langage à balises pour structurer les documents
+title: TP1 &ndash; Introduction à HTML
 subtitle: Doctype et premières balises
 layout: tutorial
 ---
 
-<!-- Faire une note plus complète sur l'encodage des caractères -->
+Pour commencez, créez vous un dossier `TP_Web_Site` dans lequel vous stockerez vos fichiers.
 
 Le but de ce TP est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
@@ -20,7 +20,7 @@ d'un paragraphe, d'un titre, *etc*, à l'aide de balises (exemple `<p>`,
    titre,... )
 
 Le navigateur (Firefox, Chrome, Safari, IE/Edge, ...) est le logiciel qui nous
-permet de visualiser les pages Web. Le but de ce TD est de démystifier la façon
+permet de visualiser les pages Web. Le but de ce TP est de démystifier la façon
 dont sont interprétés ces deux types de fichiers par le navigateur.
 Pour cela nous allons réaliser un site dont le rendu correspond au fichier
 [target.png]({{site.baseurl}}/assets/target.png), en partant du fichier
@@ -28,8 +28,8 @@ Pour cela nous allons réaliser un site dont le rendu correspond au fichier
 "brut" du site à réaliser.
 
 Nous allons tout d'abord nous consacrer à préciser la structure (le HTML donc)
-que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans la
-[deuxième partie du TD](tutorial1_2.html) comment atteindre le rendu proposé par
+que l'on peut ajouter à notre contenu brut. Nous verrons ensuite dans le
+[second TP](tp2.html) comment atteindre le rendu proposé par
 [target.png]({{site.baseurl}}/assets/target.png) en réalisant un fichier CSS.
 
 <!-- <div class="exercise"> -->
@@ -65,7 +65,7 @@ images...
 
 <div class="exercise">
 
-1. La page du TD est une page Web. Ouvrez les sources de cette page pour voir le
+1. La page du TP est une page Web. Ouvrez les sources de cette page pour voir le
 code HTML qui est utilisé pour afficher cette page (clic droit puis code
 source ou `Ctrl+U`).
 
@@ -78,7 +78,7 @@ l'extension `.html` pour que le navigateur comprenne qu'il doit l'interpréter
 comme un document HTML.
 
 1. Sauvegardez le fichier [index.txt]({{site.baseurl}}/assets/index.txt) en
-   local dans le dossier `HTMLCSS/TD1/`.  
+   local dans votre dossier `TP_Web_Site`.  
    Faites une copie `index.html` de `index.txt` dans le même dossier.
    <!-- Sauvegardez le même fichier [index.txt]({{site.baseurl}}/assets/index.txt) en -->
    <!-- local dans le dossier `HTMLCSS/TD1/` en **le renommant** `index.html`. -->
@@ -287,7 +287,7 @@ l'arbre est le suivant :
 
 ## Outils de développement Web
 
-Dans la suite du TD, nous allons utiliser notre navigateur pour "inspecter"
+Dans la suite du TP, nous allons utiliser notre navigateur pour "inspecter"
 notre page internet.  Pour cela nous conseillons Chrome ou Firefox. Appuyer sur
 la touche `F12`. Les outils de développement affichent deux parties bien
 distinctes, une dédiée au HTML et l'autre...aux CSS.  Ces outils sont fabuleux
@@ -306,7 +306,7 @@ survol avec la souris).
 
 <div class="exercise">
 
-Familiarisez-vous avec ces trois techniques en inspectant la page du TD.  
+Familiarisez-vous avec ces trois techniques en inspectant la page du TP.  
 Par exemple faites un clic droit sur l'élément "il y a trois façons..." puis
 "inspecter l'élément".  L'outil de développement doit vous présenter le code
 HTML et vous positionner directement sur `<p>Il y a ...`.
@@ -413,7 +413,7 @@ Ce qui donne une fois interprété par le moteur de rendu du navigateur :
 2. Utiliser les balises `<ol>` et `<li>` pour structurer la liste numérotée
    `<!--liste numérotée -->` dans `index.html`.
 3. **Retestez** la conformité de votre document. (En fait vous devriez le tester
-régulièrement de vous même, mais on vous tient par la main pour ce premier TD)
+régulièrement de vous même, mais on vous tient par la main pour ce premier TP)
 </div>
 
 ### Image : un exemple d'élément embarqué
@@ -425,7 +425,7 @@ Pour insérer une image, on peut utiliser la balise
 ```
 
 Cette balise n'a pas de balise fermante car elle ne peut avoir de contenu
-(cf. [le début du TD](#les-balises-html)).  On remarque qu'elle possède deux
+(cf. [le début du TP](#les-balises-html)).  On remarque qu'elle possède deux
 champs `src` et `alt` que l'on appelle les **attributs** de la balise. Les
 attributs se trouvent **toujours** dans la balise ouvrante.
 
@@ -570,7 +570,7 @@ Cela est utilisé notamment pour montrer qu'on a du 'spirit'.
 <div class="exercise">
 
 1. Allez voir le code source de notre citation à l'aide des outils de
-développement. Quels sont les deux **nouvelles** balises utilisées ?
+développement. Quelles sont les deux **nouvelles** balises utilisées ?
 <!-- `<blockquote>` et `<cite>` -->
 
    La première balise (qui commence par un `b`) entoure la citation complète
@@ -580,7 +580,7 @@ développement. Quels sont les deux **nouvelles** balises utilisées ?
 1. Utilisez ces deux balises pour mettre en avant la citation en tout début de
    document (rechercher `<!-- utiliser blockquote ici -->`).
 
-2. Avez-vous vérifié tout au long du TD que votre page HTML reste valide ?
+2. Avez-vous vérifié tout au long du TP que votre page HTML reste valide ?
 
 <!-- 1. N'oubliez pas d'enregistrer régulièrement votre travail sous Git avec `git -->
 <!--    status/add/commit/push`. -->
@@ -588,12 +588,84 @@ développement. Quels sont les deux **nouvelles** balises utilisées ?
 
 </div>
 
+<div id="structure">
+## Structuration plus avancée
+Une page web peut être composée de bien plus de balises que celles présentées lors de ce premier TP. 
+Voici un *template* HTML (modèle HTML en français) d'une structuration classique de page Web.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>...</head>
+    <body>
+        <header>
+            ...
+            <nav>...</nav>
+        </header>
+        <main>
+            <article>...</article>
+            <article>...</article>
+            <aside>...</aside>
+        </main>
+        <footer>
+            ...
+        </footer>
+    </body>
+</html>
+```
+
+Pour fixer les idées, voici un aperçu d'une mise en page correspondante à
+l'exemple précédent :
+
+<img src="{{site.baseurl}}/assets/sections.png" alt="Structuration d'une page" style="margin: 0 auto;display: block;">
+
+Par défaut, ces balises découpent la page web en sections horizontales qu'elles
+occupent en entier (du bord gauche au bord droit de la section). Par défaut Les
+balises de structure s'empilent verticalement car elles ne peuvent pas partager
+une même section horizontale (donc nous devrons appliquer un style particulier
+pour `<aside>`).
+
+Expliquons le rôle de quelques balises de structure:
+
+* `<header>` : section contenant l'en-tête affichée de la page (à ne pas
+  confondre avec `<head>`, qui sont les méta-informations de la page Web)
+* `<nav>` : section contenant une série de liens hypertextes pour la navigation
+   sur le site
+ * `<main>` : section principale de la page, celle qui contient le contenu
+   spécifique à cette page. Cette balise ne peut être présente dans une autre
+   balise présentée ici à l'exception de `<div>`.
+   <!--
+   Elle n'est pas supportée par Internet Explorer <= 10 mais le support peut en
+   être ajouté grâce à Javascript et en utilisant la règle CSS « main
+   -->
+   <!-- {display : block} ». -->
+ * `<article>` : section contenant un document « auto-suffisant », *i.e.* qui
+   peut être séparé du reste de la page et gardera cependant tout son
+   sens. Une page peut contenir plusieurs articles, dans le cas d'un blog par
+   exemple, de commentaires, d'une page listant les publications récentes ...
+ * `<aside>` : section contenant du matériel périphérique au contenu
+   principal. Cela peut-être par ex. une série de liens spécifiques au document
+   principal, un bandeau de publicités …
+ * `<footer>` : section contenant le pied de page.
+ * `<section>` : une section non spécifique, ou une sous-section d'un article,
+   d'un menu... Doit typiquement commencer par un titre `<hX>`.
+ * `<figure>` : une illustration (au sens large) « auto-suffisante » illustrant
+   le document principal ou un article, et qui doit pouvoir être placée
+   librement dans la page sans en altérer le déroulement (par ex. dans le texte,
+   dans un appendice...)
+ * `<h1>`- `<h6>` : titres de section
+ * `<blockquote>` : une citation avec en particulier `<cite>` pour la
+   référence de la citation.
+ * `<p>` : paragraphes de texte
+ * `<address>` : coordonnées de contact de l'auteur. Il ne peut y avoir qu'un
+   bloc `<address>` par article et un pour le restant de la page
+</div>
 ## Fini !
 
 Nous en avons fini en ce qui concerne le contenu et la structure de notre site.
 Nous savons ajouter de la structure à une page HTML avec des balises spécifiques.
 
-Dans la [partie 2 de ce TD](tutorial1_2.html), nous verrons comment améliorer l'aspect
+Dans le [second TP](tp2.html), nous verrons comment améliorer l'aspect
 du site.
 
 <!-- Pour afficher les extensions de fichier Dans l'explorateur : alt pour
