@@ -1,14 +1,12 @@
 ---
-title: TD1 Partie 1 &ndash; HTML - un langage à balises pour structurer les documents
+title: TP1 &ndash; HTML - un langage à balises pour structurer les documents
 subtitle: Doctype et premières balises
 layout: tutorial
 ---
 
 <!-- Faire une note plus complète sur l'encodage des caractères -->
 
-
-
-Le but de ce TD est de comprendre comment sont écrites les pages Web basiques,
+Le but de ce TP est de comprendre comment sont écrites les pages Web basiques,
 aussi appelées pages statiques (Web 1.0). Une telle page Web contient deux
 parties :
 
