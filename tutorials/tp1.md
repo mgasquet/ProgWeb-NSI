@@ -6,7 +6,7 @@ layout: tutorial
 
 Pour commencez, créez vous un dossier `TP_Web_Site` dans lequel vous stockerez vos fichiers.
 
-Pour **éditer le code** (html puis plus tard, css, js, php, etc...) vous aurez besoin d'un éditeur qui prend 
+Pour **éditer le code** (HTML puis plus tard, CSS, PHP, JS, etc...) vous aurez besoin d'un éditeur qui prend 
 en charge la **coloration syntaxique** du code.
 
 Je vous recommande `Notepad++` que vous trouverez dans la liste des programmes de l'ordinateur. Vous pouvez aussi le télécharger sur vos machines personnelles.
