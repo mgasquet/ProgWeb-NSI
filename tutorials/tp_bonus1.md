@@ -1,5 +1,5 @@
 ---
-title: TD2 &ndash; HTML / CSS avancé 1/2
+title: TP Bonus 1 &ndash; HTML / CSS avancé 1/2
 subtitle: structuration et stylisation, block & inline, combinaison de sélecteurs
 layout: tutorial
 ---
@@ -13,6 +13,8 @@ background color
 border-collapse pour avoir des bordures collées entre elles
 caption : titre du tableau ?
 -->
+
+Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp2.html)
 
 La spécification HTML5 propose différentes manières de classer les
 balises/éléments selon leurs caractéristiques
@@ -131,7 +133,7 @@ Expliquons le rôle de quelques balises de structure:
 
 <div class="exercise">
 
-1. Ajoutez une balise `<header>`. Son contenu sera la citation du TD1 et une
+1. Ajoutez une balise `<header>`. Son contenu sera la citation du TP1 et une
    barre de navigation `<nav>` vide pour l'instant,
 
 2. Ajoutez une balise `<main>`, une balise `<article>` et une balise `<aside>`
@@ -166,9 +168,9 @@ Expliquons le rôle de quelques balises de structure:
    1. l'image [contact.jpg]({{site.baseurl}}/assets/contact.jpg) pour illustrer
    que nous sommes bien à l'écoute.   
    1. Ajoutez l'adresse avec la balise `<address>` contenant :  
-      IUT de Montpellier Sète <br>
-      99 avenue d'Occitanie <br>
-      34296 Montpellier Cedex 5 <br>
+      Lycée Philippe Lamour <br>
+      36 Rue de l'Occitanie <br>
+      30000 Nîmes <br>
       Email : chuckn@yopmail.com
    
 3. Validez votre page HTML.
@@ -178,20 +180,20 @@ Expliquons le rôle de quelques balises de structure:
 À ce point, le travail de division du site n'a pas encore de résultat visuel
 marquant. C'est avant tout un travail de structuration logique qui permet au
 navigateur, ou à un moteur de recherche, de mieux comprendre votre page web.
-Nous verrons comment changer la mise en page globale dans les TDs suivants. Pour
-la suite du TD, nous allons ajouter du style aux éléments de la page courante.
+Nous verrons comment changer la mise en page globale dans les TPs suivants. Pour
+la suite du TP, nous allons ajouter du style aux éléments de la page courante.
 
 
 ## Règles de compositions des CSS
 
-[Rappelons qu'une règle CSS]({{site.baseurl}}/tutorials/tutorial1_2.html#tutoriel-dintroduction)
+[Rappelons qu'une règle CSS]({{site.baseurl}}/tutorials/tp2.html#tutoriel-dintroduction)
 est composé d'un sélecteur CSS et d'un bloc de déclaration composé de plusieurs
 paires propriété CSS / valeur. Un sélecteur CSS indique à quels éléments HTML
 s’applique le style.
 
 À partir des sélecteurs de bases (de balise, de classe et d'identifiant)
 présentés
-[dans le TD précédent]({{site.baseurl}}/tutorials/tutorial1_2.html#les-sélecteurs-css-de-base),
+[dans le TP précédent]({{site.baseurl}}/tutorials/tp2.html#les-sélecteurs-css-de-base),
 il est possible de créer des
 [sélecteurs complexes](http://www.w3.org/TR/css3-selectors/#combinators).  Par
 exemple, nous allons voir comment sélectionner les `<div>` ayant la classe
@@ -417,11 +419,11 @@ Voyons maintenant comment la styliser.
  1. Donnez la couleur violette `#640051` au texte des skills dans le tableau sans
  modifier le style des éléments ayant la classe `skill` dans les paragraphes,
  (voir la
- [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#règles-de-compositions-des-css))
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/tp2.html#règles-de-compositions-des-css))
  1. ajoutez une règle pour que le fond d'une ligne (*row*) sur deux du corps de
  la table apparaisse en blanc et l'autre avec la couleur `#CCC`
  <strong>SANS</strong> modifier de quelque façon le HTML (voir la
- [section sur les sélecteurs]({{site.baseurl}}/tutorials/tutorial2.html#règles-de-compositions-des-css))  
+ [section sur les sélecteurs]({{site.baseurl}}/tutorials/rp2.html#règles-de-compositions-des-css))  
  **Attention :** La ligne du `<thead>` doit rester bleue.
 
 </div>
@@ -445,7 +447,7 @@ plus en exergue.
 2. Mettez le 5 de Chuck en avant avec une balise `<strong>` pour bien montrer
 qui est le patron.
 3. (Optionnel) Si vous souhaitez centrer le 5, allez voir
-   [dans la suite du TD](#centrer-horizontalement-) comme faire.
+   [dans la suite du TP](#centrer-horizontalement-) comme faire.
 
 <!-- Faire en sorte que les noms des acteurs soient maintenant des liens vers leurs pages Wikipedia. -->
 
@@ -594,7 +596,7 @@ rajoutez-lui la règle `clear:left`.
 
 </div>
 
-<!-- Peut-être mettre position en début de TD et dans le même TD que l'exercice
+<!-- Peut-être mettre position en début de TP et dans le même TP que l'exercice
 de positionnement du sous-menu -->
 
 ## Position
