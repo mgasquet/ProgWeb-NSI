@@ -133,8 +133,7 @@ Expliquons le rôle de quelques balises de structure:
 
 <div class="exercise">
 
-1. Ajoutez une balise `<header>`. Son contenu sera la citation du TP1 et une
-   barre de navigation `<nav>` vide pour l'instant,
+1. Ajoutez une balise `<header>`. Son contenu sera la citation du TP1.
 
 2. Ajoutez une balise `<main>`, une balise `<article>` et une balise `<aside>`
    comme dans le *template* précédent. Mettez l'ancien contenu de la page dans
@@ -143,12 +142,13 @@ Expliquons le rôle de quelques balises de structure:
 
 3. Ajoutez une balise `<footer>` qui contient le lien vers le retour au début du site,
    
-4. Ajoutez dans la balise `<nav>` deux liens dans une structure de liste
-   contenant : Un lien nommé "Accueil" qui pointe sur la page courante
-   `index.html` et un nommé "Contact" qui pointe vers une future page
-   `contact.html`,
+4. **Si vous n'avez pas déjà effectué le TP3 (formulaires)**, ajoutez dans la balise `<header>` une balise `<nav>` contenant un lien nommé "Accueil" qui pointe sur la page courante
+   `index.html`.
+
+5. Ajoutez dans la balise `<nav>` un lien nommé "Contact" qui pointe vers une (future) page
+   `contact.html`.
    
-5. Validez votre pages HTML sur le validateur
+6. Validez votre pages HTML sur le validateur
    [https://html5.validator.nu/](https://html5.validator.nu/). (Faites-le
    systématiquement sans qu'on vous le demande :-) ).
 

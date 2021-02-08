@@ -4,7 +4,7 @@ subtitle: Un langage de mise en page
 layout: tutorial
 ---
 
-Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp1.html) (éventuellement mis à jour avec la correction)
+Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp1.html) (éventuellement mis à jour avec [la correction]({{site.baseurl}}/corrections/correction_tp1_web_html.zip))
 
 Les standards définissant le CSS sont publiés par le World Wide Web Consortium
 (<a href="http://www.w3.org/">W3C</a>) à l'adresse

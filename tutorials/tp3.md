@@ -22,7 +22,7 @@ https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et
 
 <!-- Corriger absence d'explications sur <option value=""> et selected -->
 
-Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp2.html) (éventuellement mis à jour avec la correction)
+Pour ce TP, reprenez votre dossier `TP_Web_Site` du [TP précédent](tp2.html) (éventuellement mis à jour avec [la correction]({{site.baseurl}}/corrections/correction_tp2_web_css.zip))
 
 ## Introduction
 
@@ -87,25 +87,28 @@ Nous allons voir comment est envoyée la valeur d'un `<input>` lorsque l'on soum
  1. Créez une nouvelle page `inscription.html` au site de Chuck Norris (donc, dans le dossier `TP_Web_Site`). Cette page
  va contenir le formulaire d'inscription au fan-club de Chuck que nous allons
  construire dans ce TP.
+ 
+ 1. Pour avoir un **template** de base pour la page, reprenez le code de la page `ìndex.html` et copiez le dans votre nouvelle page `inscription.html`. 
+	Supprimez tout le contenu (intérieur) du body, et changez le titre de la page par "Inscription au fan-club de Chuck Norris".
 
-1. Ajoutez à la page `inscription.html` le formulaire suivant :
+1. Ajoutez à la page `inscription.html` le formulaire suivant (dans le body) :
 
    ```html
-   <form action="sendToMySecondYearInIut.php" method="post">
+   <form action="sendToTpServer.php" method="post">
      <input name="uname" type="text" >
      <input type="submit" value="Envoyer">
    </form>
    ```
 
-  1. **Sous Chrome relativement récent uniquement** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
-  'Réseau', cocher la case "Preserve log", donnez la valeur `dupont` au champ texte, puis cliquez sur le bouton
-  "Envoyer" du formulaire.  Vous devez voir une requête contenant
-  `sendToTpServer` dans la console. Cliquez sur cette ligne et cherchez
-  la valeur `dupont` dans les détails de la transaction.
+  1. **Avec Firefox** : Affichez la page et ouvrez la console (F12) pour aller sur l'onglet
+  'Réseau', entrez la valeur `dupont` au champ texte, puis cliquez sur le bouton
+  "Envoyer" du formulaire (il est normal d'avoir une erreur).  Vous devez voir une requête contenant
+  `sendToTpServer` dans la console. Cherchez
+  la valeur `dupont` dans les détails de la transaction, à droite, dans l'onglet 'Requête'.
   
  1. Donnez à l'attribut `method` du formulaire la valeur `get`. Cliquez sur le
     bouton "Envoyer" du formulaire, l'URL doit maintenant finir par
-    "sendToMySecondYearInIut.php?uname=dupont".
+    "sendToTpServer.php?uname=dupont".
 
 
 </div>
@@ -135,38 +138,40 @@ Il serait bien de préciser à l'utilisateur à quoi notre champ `<input>` fait 
     l'URL du navigateur (l'URL doit finir par
     `sendToTpServer.php?uname=dupont&firstname=super` et la `method` du
     formulaire doit toujours être `get`).
- 1. Pour ne pas "coller" les champs du formulaire à la suite, vous devez englober chaque champ (`<input>`) du formulaire entre des balises `<p>...</p>` 
-
+ 1. Pour ne pas "coller" les champs du formulaire à la suite, il faut englober le couple de balises `<label>` et `<input>` entre des balises `<div>...</div>`. Appliquez cette modificaton.
+ 1. Si vous souhaitez que le champ (`<input>`) se place en dessous du label et non à côté, vous devez englober le champ entre des balises `<p>...</p>` (Modifiez selon votre goût).
 </div>
 
 ## Les principaux types de balises `<input>` 
 
 
-Il existe un assez grand nombre de types d'input :
+Il existe un assez grand nombre de [types d'input](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input) (vous pouvez cliquez dessus pour voir un exemple) :
 
- * Le type `radio` permet de ne sélectionner qu'une seule des options
+ * Le type [`radio`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/radio) permet de ne sélectionner qu'une seule des options
 possibles.
- * Le type `checkbox` (case à cocher) permettent de sélectionner autant d'options que l'utilisateur le souhaite.
- * Le type `password` masque automatiquement les caractères entrés.
- * Les types `email`, `URL`, `tel`, `date`, `time` et `number`, etc. permettent
+ * Le type [`checkbox`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/checkbox) (case à cocher) permettent de sélectionner autant d'options que l'utilisateur le souhaite.
+ * Le type [`password`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/password) masque automatiquement les caractères entrés.
+ * Les types [`email`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/email), [`URL`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/url), 
+ [`tel`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/tel), [`date`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/date), [`time`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/time) et [`number`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/number), etc. permettent
  d'adapter le clavier virtuel quand la page est affichée sur un smartphone.
  Suivant le navigateur, une présentation différente peut être associée. Des
- validateurs sont associés à ces champs (nous le verrons plus loin),  une valeur de champ email doit par exemple contenir un "@".
+ validateurs sont associés à ces champs, par exemple, une valeur de champ email doit contenir un "@".
 
 <div class="exercise" id="exinput">
  
- A l'aide de [w3schools](http://www.w3schools.com/tags/att_input_type.asp), ajoutez dans le formulaire les `<input>` libellés :
+ A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input) (en regardant les exemples), ajoutez dans le formulaire les `<input>` libellés :
 
- 1. "Sexe" avec les deux valeurs que vous connaissez.
- 1. "Date de naissance" avec le type d'input `date`.
- 1. "Mot de passe" avec le type d'input `password`.
- 1. "Email" avec le type d'input de type ... `email`.
- 1. "Niveau en karaté" avec le type d'input `number` allant de 0 à 5.
- 1. "Niveau d'engagement" avec un choix parmi trois valeurs libellées "Basique (5 €) ", "Gold (15 €)" et "Tatane in your face (50 €)".
- 1. "J'ai bien lu les clauses que je n'ai pas lues" associé à une case à cocher. 
- 1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés, on rappelle que c'est l'attribut `name` de l'input qui est utilisé.
+ 1. "Sexe" avec les deux valeurs que vous connaissez, il s'agira d'inputs [`radio`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/radio).
+ 1. "Date de naissance" avec le type d'input [`date`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/date).
+ 1. "Mot de passe" avec le type d'input [`password`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/password).
+ 1. "Email" avec le type d'input de type ... [`email`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/email).
+ 1. "Niveau en karaté" avec le type d'input [`number`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/number) allant de 0 à 5 (cherchez comment appliquer cette contrainte).
+ 1. "Niveau d'engagement" (encore des inputs [`radio`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/radio)) avec un choix parmi trois valeurs libellées "Basique (5 €) ", "Gold (15 €)" et "Tatane in your face (50 €)".
+ 1. "J'ai bien lu les clauses que je n'ai pas lues" associé à une case à cocher ([`checkbox`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input/checkbox)). 
+ 1. Vérifier par envoi du formulaire que tous les champs sont bien renseignés (via la console, avec `F12`). On rappelle que c'est l'attribut `name` de l'input qui est utilisé.
  1. Faite en sorte qu'il y ait un saut de ligne entre chaque `<input>` (comme
-    dans le dernier exercice de la section précédente).
+    dans la section précédente).
+ 1. Au besoin, vous pouvez ajouter plus d'espace entre deux champs en ajoutant une balise `<br>` entre les deux `<div>` qui contiennent les champs.
  
 </div>
 
@@ -194,7 +199,7 @@ comme dans l'exercice 1 pour le voir).
 
 ## La balise `<select>`
 
-Voyons maintenant un autre élément important d'un formulaire, correspondant à la balise `<select>`.
+Voyons maintenant un autre élément important d'un formulaire, correspondant à la balise [`<select>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/select).
 Il permet de choisir parmi un ensemble de valeurs présentées par un menu déroulant.
 Tout comme `<input>`, cet élément peut aussi être libellé via un `<label>`. La liste déroulante permet de base de ne sélectionner
 qu'une option. Plusieurs options peuvent être sélectionnées si l'attribut `multiple` est ajouté à la balise `<select>`. Des groupes de choix peuvent être proposés avec la balise `<optgroup>`. 
@@ -218,16 +223,16 @@ s'exprimer.
 
 <div class="exercise" id="exlabel">
 
- 1. Ajoutez un champ à votre formulaire libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
+ 1.  A l'aide de [developer.mozilla.org](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Textarea), ajoutez un champ à votre formulaire libellé "Message pour Chuck" associé à un `<textarea>` sur lequel l'utilisateur peut s'épancher.
 </div>
 
 ## La balise `<fieldset>`
 
-La balise `<fieldset>` permet de regrouper visuellement différents champs `<input>`.
+La balise [`<fieldset>`](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML#les_%C3%A9l%C3%A9ments_%3Cfieldset%3E_et_%3Clegend%3E) permet de regrouper visuellement différents champs `<input>`.
 
 
 <div class="exercise" id="exfield">
-A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML),
+A l'aide de [cette page](https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structurer_un_formulaire_HTML#les_%C3%A9l%C3%A9ments_%3Cfieldset%3E_et_%3Clegend%3E),
 regroupez les champs sur ces trois grands axes suivant :
 
 * "Informations personnelles" (contenant "Nom", "Prénom", "Email", etc.),
@@ -238,19 +243,32 @@ regroupez les champs sur ces trois grands axes suivant :
 </div>
 
 
-## Ergonomie et convivialité
+## Champs obligatoires, ergonomie et convivialité
+
+### Champs obligatoires
+
+Il est possible de rendre un champ **obligatoire**. 
+Cela signfiie que le formulaire ne sera pas envoyé si l'utilisateur ne complète pas le champ.
+Pour rendre un champ obligatoire, il suffit de rajouter l'attribut `required` dans la balise du champ (`<input>`, `<select>`, `<textarea>`, etc...) **sans aucune valeur associée** (pas de =).
+Vous pouvez regarder [le code de cet exemple](https://developer.mozilla.org/fr/docs/Web/HTML/Element/Input).
+
+<div class="exercise" id="extab">
+  1. Rendre la coche "J'ai bien lu les clauses que je n'ai pas lues" obligatoire. Vérifiez si l'envoi du formulaire est bien impossible alors.
+  1. Rendre aussi les champs "Nom" "Mot de passe" et "Email" obligatoires.
+  1. Par convention d'usage, le nom des champs obligatoires est suivi d'une "*". Ajoutez la aux labels des `<input>` obligatoires.
+</div>
+
 
 ### Navigation
 
 Pour les utilisateurs avancés, la navigation à l'aide de la touche “tabulation”
 permet de parcourir très vite le formulaire. L'attribut “autofocus” permet de
-spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut “tabindex” permet de spécifier l'ordre
+spécifier au navigateur quel élément du formulaire doit avoir le focus quand la page est chargée. L'attribut [`tabindex`](https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/tabindex) permet de spécifier l'ordre
 dans lequel les éléments sont parcourus en appuyant sur “tabulation”.
 
 <div class="exercise" id="extab">
- * Vérifiez que vous pouvez accéder à tous les champs avec la touche tabulation. Modifier l'ordre de tabulation avec la propriété “tabindex”.
+ * Vérifiez que vous pouvez accéder à tous les champs avec la touche tabulation. Modifier l'ordre de tabulation avec l'attribut `tabindex`.
 </div>
-
 
 ### Convivialité
 
@@ -342,7 +360,7 @@ Pour **les deux pages**, répétez les instructions suivantes :
 1. Ajoutez de nouvelles balises `<header></header>` à l'intérieur des balises `<body></body>`, au tout début.
 2. Placez tout ce qui reste dans la balise `<body></body>` (après le header), dans des balises `<main></main>`.
 3. Ajoutez des balises `<nav></nav>` à l'intérieur des balises `<header></header>`.
-4. A lintérieur du bloc `<nav>...</nav>` ajotuez deux liens hypertextes à l'aide des balises `<a>...</a>` :
+4. A lintérieur du bloc `<nav>...</nav>` ajoutez deux liens hypertextes à l'aide des balises `<a>...</a>` :
 	* Un lien `Home` dont l'attribut `href` pointe vers `index.html`.
 	* Un lien `Inscription` dont l'attribut `href` pointe vers `inscription.html`.
 	
