@@ -196,3 +196,8 @@ ul p + ul {
     margin-top: 0em;
 }
 */
+
+.two-elements-display {
+  display: flex;
+  justify-content: space-between;
+}
