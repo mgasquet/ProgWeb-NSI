@@ -672,7 +672,7 @@ $today = ucfirst(strftime("%A %d %b %Y", strtotime(date('Y-m-d'))));
 
 Si la page est affichée le jeudi 4 mars 2021 :
 
-![Resultat Date PHP]({{site.baseurl}}/assets/result-date-php.png)
+![Resultat Date PHP]({{site.baseurl}}/assets/result-date-php.PNG)
 
 ### Nombre de visiteurs
 
@@ -721,7 +721,7 @@ Une fois cette librairie importée, vous avez accès à deux nouvelles fonctions
 
 **Exemple de résultat**
 
-![Resultat Visiteurs PHP]({{site.baseurl}}/assets/result-visiteurs-php.png)
+![Resultat Visiteurs PHP]({{site.baseurl}}/assets/result-visiteurs-php.PNG)
 
 ### Inscription
 
