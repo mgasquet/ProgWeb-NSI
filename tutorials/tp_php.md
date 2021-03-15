@@ -6,7 +6,7 @@ layout: tutorial
 
 ## Introduction
 
-Dans le [TP3](tp3.html), nous avons vu comment créer des forumalire sur un site avec HTML.
+Dans le [TP3](tp3.html), nous avons vu comment créer des formulaire sur un site avec HTML.
 Or, la finalité de ce type de formulaire est d'envoyer des données vers **un serveur web** afin de les traiter et de renvoyer une nouvelle page à l'utilisateur.
 
 On a donc la nécéssité d'avoir **un programme** permettant de réaliser des actions et construire une page web selon les données transmisses et connues du serveur.

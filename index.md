@@ -17,9 +17,10 @@ layout: main
 	* [TP Bonus 2 -- HTML / CSS avancé - Partie 2](tutorials/tp_bonus2.html)
 	* TP Bonus 3 -- Responsive design (*coming soon*)
 
-## Côté serveur
+## Programmation côté serveur - PHP
 
 1. [Notions complémentaires -- Programmation web -- Côté serveur ](tutorials/cours_prog_web.html)
-2. [TP 4 -- Programmation web -- Côté serveur -- PHP](tutorials/tp_php.html)
+2. [TP 4 -- Programmation web -- Côté serveur -- PHP](tutorials/tp_php.html) -- [Correction]({{site.baseurl}}/corrections/correction_tp4_php.zip)
 
-## Javascript
+## Programmation côté client - Javascript
+1. [TP 5 -- Programmation web -- Côté client -- Javascript](tutorials/tp5_js.html)
